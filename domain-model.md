@@ -48,3 +48,10 @@ class TodoList
   - Output 1: items(@TodoItem[])
   - Scenario 2: If TodoItem with the given id does not exist
   - Output: (@string, "Todo item not found")
+
+- method: getAllTodoItemsByDate(date)
+  - Input: date(@string, dd/mm/yyyy)
+  - Scenario 1: If TodoItem with the given date exists
+  - Output 1: itemsOfTheDay(@TodoItem[])
+  - Scenario 2: If TodoItem with the given date does not exist
+  - Output: [] (@array)

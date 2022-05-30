@@ -8,6 +8,7 @@ class TodoList {
         const TodoItem = {
             id: this.id++,
             text: description,
+            date: new Date().toLocaleDateString(),
             status: 'incomplete'
         }
         this.items.push(TodoItem)
@@ -66,6 +67,16 @@ class TodoList {
             }
         }
         return "Todo item not found"
+    }
+
+    getAllTodoItemsByDate(date) {
+        const itemsOfTheDay = []
+        for (let i = 0; i < this.items.length; i++) {
+            if (this.items[i].date === date) {
+                itemsOfTheDay.push(this.items[i])
+            }
+        }
+        return itemsOfTheDay
     }
 }
 
