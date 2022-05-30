@@ -1,12 +1,5 @@
 // Add your domain model below
 
-Method:totalCost(basket)
-Input:basket(@Item[])
-Data:Item(@Object), properties: name(@String), price(@Number), quantity(@Number))
-Scenario:If there are items
-Output:@Number
-
-
 class TodoList
 - properties
   - nextId: Int
