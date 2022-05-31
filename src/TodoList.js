@@ -51,32 +51,29 @@ class TodoList {
     }
 
     getTodoItemByID(id) {
-        for (let i = 0; i < this.items.length; i++) {
-            if (this.items[i].id === id) {
-                return this.items[i]
-            }
+        const foundItem = this.items.find(item => item.id === id)
+        if (foundItem) {
+            return foundItem
         }
         return "Todo item not found"
     }
 
     removeTodoItemByID(id) {
-        for (let i = 0; i < this.items.length; i++) {
-            if (this.items[i].id === id) {
-                this.items.splice(i, 1)
-                return this.items
-            }
+        const foundItem = this.items.find(item => item.id === id)
+        if (foundItem) {
+            const index = this.items.indexOf(foundItem)
+            this.items.splice(index, 1)
+            return this.items
         }
         return "Todo item not found"
     }
 
     getAllTodoItemsByDate(date) {
-        const itemsOfTheDay = []
-        for (let i = 0; i < this.items.length; i++) {
-            if (this.items[i].date === date) {
-                itemsOfTheDay.push(this.items[i])
-            }
+        const itemsOfTheDay = this.items.filter(item => item.date === date)
+        if (itemsOfTheDay) {
+            return itemsOfTheDay
         }
-        return itemsOfTheDay
+        return []
     }
 }
 
